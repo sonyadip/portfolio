@@ -26,18 +26,18 @@ interface FooterProps {
 }
 
 const DEFAULT_LINKS: SocialLink[] = [
-  { label: "EMAIL", href: "mailto:sonypratama190301@gmail.com" },
+  // { label: "EMAIL", href: "mailto:sonypratama190301@gmail.com" },
   { label: "INSTAGRAM", href: "https://www.instagram.com/sonyadip/" },
   { label: "GITHUB", href: "https://github.com/sonyadip/" },
 ];
 
 export function Footer({
   id = "contact",
-  label = "GET IN TOUCH",
+  label = "Contact",
   headlineFirstLine = "Say hi!",
   headlineSecondLine = "Let's talk",
   email = "sonypratama190301@gmail.com",
-  location = "BALI, INDONESIA",
+  location = "GIANYAR, BALI",
   avatarSrc = "/images/sony-pratama.webp",
   links = DEFAULT_LINKS,
   copyright,
@@ -170,14 +170,14 @@ export function Footer({
             <span className="font-corp inline-flex items-center px-fluid-12 py-fluid-4 rounded-[4px] text-fluid-13 font-bold uppercase tracking-[0.02em] leading-none select-none bg-[#dbdbdb] text-[#333333]">
               {label}
             </span>
-            <span className="font-montreal-mono text-fluid-11 sm:text-fluid-12 uppercase tracking-wider text-[#525252] hidden sm:inline">
-              8.4095° S, 115.1889° E
-            </span>
+            {/* <span className="font-montreal-mono text-fluid-11 sm:text-fluid-12 uppercase tracking-wider text-[#525252] hidden sm:inline">
+              REMOTE / WORLDWIDE
+            </span> */}
           </div>
 
-          <span className="font-montreal-mono text-fluid-11 sm:text-fluid-12 uppercase tracking-wider text-[#444444]">
+          {/* <span className="font-montreal-mono text-fluid-11 sm:text-fluid-12 uppercase tracking-wider text-[#444444]">
             BALI · GMT+8 · AVAILABLE FOR WORK
-          </span>
+          </span> */}
         </div>
 
         <div className="contact-headline mb-fluid-64 sm:mb-fluid-96 md:mb-fluid-120">
@@ -285,9 +285,9 @@ export function Footer({
 
             <div className="flex items-center gap-fluid-8 font-montreal text-fluid-13 sm:text-fluid-14 text-[#444444]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#111111]" />
-              <span className="font-medium text-[#111111]">{location}</span>
+              <span className="font-montreal-mono font-medium text-[#111111]">{location}</span>
               <span className="text-[#525252] font-mono text-fluid-11 sm:text-fluid-12 ml-1">
-                · BALI (GMT+8)
+                · INDONESIA (GMT+8)
               </span>
             </div>
           </div>
@@ -316,12 +316,12 @@ export function Footer({
         </div>
 
         <div className="mt-fluid-56 sm:mt-fluid-32 pt-fluid-24 border-t border-[#bababa] flex flex-col sm:flex-row items-center justify-between gap-fluid-12 text-center sm:text-left text-fluid-12 font-montreal text-[#525252]">
-          <p>
+          <p className=" uppercase">
             {copyright ||
-              `© ${new Date().getFullYear()} Sony Pratama · Website Developer`}
+              `© ${new Date().getFullYear()} | Sony Pratama`}
           </p>
           <p className="font-montreal-mono text-fluid-11 text-[#525252]">
-            8.4095° S, 115.1889° E · ALL RIGHTS RESERVED
+            ALL RIGHTS RESERVED
           </p>
         </div>
       </div>
