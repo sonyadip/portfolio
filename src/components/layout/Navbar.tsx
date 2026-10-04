@@ -72,6 +72,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const getItemTransition = (hideDelay: number, showDelay: number) => {
+    const delay = hidden ? hideDelay : showDelay;
+    return hidden
+      ? `transform 380ms cubic-bezier(0.4, 0, 0.2, 1) ${delay}ms, opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) ${delay}ms`
+      : `transform 450ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, opacity 380ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`;
+  };
+
   return (
     <>
       <header
@@ -80,25 +87,43 @@ export function Navbar() {
         }`}
         style={{ mixBlendMode: "difference" }}
       >
-        <div
-          className="flex items-center pt-fluid-4 md:pt-0 gap-fluid-20 sm:gap-fluid-32 md:gap-fluid-40 will-change-transform font-montreal font-semibold tracking-wider uppercase text-fluid-11 leading-none text-[#ebe8e3]"
-          style={{
-            transform: hidden ? "translate3d(-150%, 0, 0)" : "translate3d(0, 0, 0)",
-            transition: "transform 400ms cubic-bezier(0.44, 0, 0.56, 1) 30ms",
-          }}
-        >
-          <div className="inline-flex items-center gap-fluid-8 whitespace-nowrap leading-none pt-fluid-2">
+        <div className="flex items-center pt-fluid-4 md:pt-0 gap-fluid-20 sm:gap-fluid-32 md:gap-fluid-40 font-montreal font-semibold tracking-wider uppercase text-fluid-12 leading-none text-[#ebe8e3]">
+          {/* Item 1 (Outermost left): BALI */}
+          <div
+            className="inline-flex items-center gap-fluid-8 whitespace-nowrap leading-none pt-fluid-2 will-change-transform"
+            style={{
+              transform: hidden ? "translate3d(-120%, 0, 0)" : "translate3d(0, 0, 0)",
+              opacity: hidden ? 0 : 1,
+              transition: getItemTransition(0, 120),
+            }}
+          >
             <span className="h-[0.55em] w-[0.55em] rounded-full bg-[#ebe8e3] shrink-0" />
             <span className="leading-none hidden xs:inline">BALI, INDONESIA</span>
             <span className="leading-none xs:hidden">BALI</span>
           </div>
 
-          <span className="tabular-nums hidden sm:inline-flex items-center leading-none">
+          {/* Item 2 (Middle left): Time */}
+          <span
+            className="tabular-nums hidden sm:inline-flex items-center leading-none will-change-transform"
+            style={{
+              transform: hidden ? "translate3d(-120%, 0, 0)" : "translate3d(0, 0, 0)",
+              opacity: hidden ? 0 : 1,
+              transition: getItemTransition(60, 60),
+            }}
+          >
             <span className="leading-none">{timeStr || "12:00 PM"}</span>
             <span className="text-[#ebe8e3]/70 font-bold ml-1 leading-none">GMT+8</span>
           </span>
 
-          <span className="hidden lg:inline-flex items-center leading-none font-montreal font-semibold tracking-wider text-[#ebe8e3]/80">
+          {/* Item 3 (Innermost left): Status */}
+          <span
+            className="hidden lg:inline-flex items-center leading-none font-montreal font-semibold tracking-wider text-[#ebe8e3]/80 will-change-transform"
+            style={{
+              transform: hidden ? "translate3d(-120%, 0, 0)" : "translate3d(0, 0, 0)",
+              opacity: hidden ? 0 : 1,
+              transition: getItemTransition(120, 0),
+            }}
+          >
             AVAILABLE FOR WORK
           </span>
         </div>
@@ -110,28 +135,54 @@ export function Navbar() {
         }`}
       >
         <nav
-          className="flex items-center gap-fluid-6 sm:gap-fluid-8 md:gap-fluid-10 will-change-transform uppercase text-fluid-11 leading-none"
-          style={{
-            transform: hidden ? "translate3d(120%, 0, 0)" : "translate3d(0, 0, 0)",
-            transition: "transform 400ms cubic-bezier(0.44, 0, 0.56, 1) 30ms",
-          }}
+          className="flex items-center gap-fluid-6 sm:gap-fluid-8 md:gap-fluid-10 uppercase text-fluid-12 leading-none"
           aria-label="Main Navigation"
         >
-          <Button variant="outline" href="#about">
-            ABOUT
-          </Button>
-
-          <Button variant="outline" href="#projects">
-            PROJECTS
-          </Button>
-
-          <Button
-            variant="solid"
-            avatarSrc="/images/sony-pratama.webp"
-            href="mailto:sonypratama190301@gmail.com"
+          {/* Item 1 (Innermost right): ABOUT */}
+          <div
+            className="inline-flex items-center will-change-transform"
+            style={{
+              transform: hidden ? "translate3d(120%, 0, 0)" : "translate3d(0, 0, 0)",
+              opacity: hidden ? 0 : 1,
+              transition: getItemTransition(120, 0),
+            }}
           >
-            CONTACT
-          </Button>
+            <Button variant="outline" href="#about">
+              ABOUT
+            </Button>
+          </div>
+
+          {/* Item 2 (Middle right): PROJECTS */}
+          <div
+            className="inline-flex items-center will-change-transform"
+            style={{
+              transform: hidden ? "translate3d(120%, 0, 0)" : "translate3d(0, 0, 0)",
+              opacity: hidden ? 0 : 1,
+              transition: getItemTransition(60, 60),
+            }}
+          >
+            <Button variant="outline" href="#projects">
+              PROJECTS
+            </Button>
+          </div>
+
+          {/* Item 3 (Outermost right): CONTACT */}
+          <div
+            className="inline-flex items-center will-change-transform"
+            style={{
+              transform: hidden ? "translate3d(120%, 0, 0)" : "translate3d(0, 0, 0)",
+              opacity: hidden ? 0 : 1,
+              transition: getItemTransition(0, 120),
+            }}
+          >
+            <Button
+              variant="solid"
+              avatarSrc="/images/sony-pratama.webp"
+              href="mailto:sonypratama190301@gmail.com"
+            >
+              CONTACT
+            </Button>
+          </div>
         </nav>
       </header>
     </>

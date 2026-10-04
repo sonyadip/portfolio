@@ -401,7 +401,7 @@ export function Banner({ onNameLanded, onIntroComplete }: BannerProps) {
             ref={subtitleRef}
             className="mb-fluid-8 flex items-center opacity-0"
           >
-            <p className="font-semibold tracking-[0.25em] uppercase text-[#525252] font-montreal-mono text-fluid-10">
+            <p className="font-semibold tracking-[0.25em] uppercase text-[#525252] font-montreal-mono text-fluid-12">
               WEBSITE DEVELOPER
             </p>
           </div>
