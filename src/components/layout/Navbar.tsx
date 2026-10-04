@@ -117,13 +117,12 @@ export function Navbar() {
           }}
           aria-label="Main Navigation"
         >
-          <Button variant="outline" href="#projects">
-            PROJECTS
+          <Button variant="outline" href="#about">
+            ABOUT
           </Button>
 
-          <Button variant="outline" href="#about">
-            <span className="hidden sm:inline">ABOUT ME</span>
-            <span className="sm:hidden">ABOUT</span>
+          <Button variant="outline" href="#projects">
+            PROJECTS
           </Button>
 
           <Button

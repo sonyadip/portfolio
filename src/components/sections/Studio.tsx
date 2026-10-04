@@ -17,7 +17,7 @@ interface StudioProps {
 }
 
 const DEFAULT_TEXT =
-  "Hi, I'm Sony — a website developer based in Bali with nearly 4 years of experience working with WordPress and Shopify. I turn Figma designs into responsive, functional websites, and work across development, testing, and launch. I also handle the things that come after, including troubleshooting, performance optimisation, basic SEO implementation, cross-browser testing, and ongoing website maintenance.";
+  "Hi, I'm Sony — a website developer based in Bali with nearly 4 years of experience working with WordPress and Shopify. I turn Figma designs into responsive, functional websites and work on everything from development and testing to launch. I also handle post-launch work, including troubleshooting, performance optimisation, basic SEO implementation, cross-browser testing, and ongoing website maintenance.";
 
 export function Studio({
   id = "studio",

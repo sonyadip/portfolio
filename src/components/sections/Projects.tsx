@@ -14,7 +14,7 @@ interface Project {
   year: string;
   category: string;
   preview: string;
-  label: "Personal" | "Juicebox Clients";
+  label: "Personal Project" | "Juicebox / Client Project";
 }
 
 const PROJECTS: Project[] = [
@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     year: "2026",
     category: "Hospitality / Luxury Retreat",
     preview: "/images/projects/bambootel.webp",
-    label: "Juicebox Clients",
+    label: "Juicebox / Client Project",
   },
   {
     title: "SENADDA",
@@ -32,15 +32,15 @@ const PROJECTS: Project[] = [
     year: "2026",
     category: "Digital Invitation / SaaS",
     preview: "/images/projects/senadda.webp",
-    label: "Personal",
+    label: "Personal Project",
   },
   {
     title: "MAS TRAVEL",
     url: "https://mas-travel.com/",
     year: "2026",
-    category: "Travel & Tour",
+    category: "Visa & Immigration Services",
     preview: "/images/projects/mastravel.webp",
-    label: "Juicebox Clients",
+    label: "Juicebox / Client Project",
   },
   {
     title: "SENTADELL ASSOCIATES",
@@ -48,15 +48,15 @@ const PROJECTS: Project[] = [
     year: "2025",
     category: "Professional Services / Management Consulting",
     preview: "/images/projects/sentadella.webp",
-    label: "Juicebox Clients",
+    label: "Juicebox / Client Project",
   },
   {
     title: "TAFHIGHLIGHT",
     url: "https://tafhighlight.ai/",
     year: "2025",
-    category: "Aviation SaaS / AI Tech",
+    category: "Aviation / SaaS",
     preview: "/images/projects/tafhighlight.webp",
-    label: "Juicebox Clients",
+    label: "Juicebox / Client Project",
   },
   {
     title: "IRISH CHAMBER",
@@ -64,7 +64,7 @@ const PROJECTS: Project[] = [
     year: "2024",
     category: "Trade Association / Business Network",
     preview: "/images/projects/irishchamber.webp",
-    label: "Juicebox Clients",
+    label: "Juicebox / Client Project",
   },
 ];
 
@@ -167,10 +167,10 @@ function ProjectRow({ project, onRowEnter, onRowLeave }: ProjectRowProps) {
           ease: "power2.out",
         });
 
-        title.style.color = "#ffffff";
+        title.style.color = "#ebe8e3";
         meta.style.color = "rgb(170, 170, 170)";
         if (labelRef.current) labelRef.current.style.color = "rgb(170, 170, 170)";
-        arrow.style.color = "#ffffff";
+        arrow.style.color = "#ebe8e3";
       };
 
       const onLeave = () => {
@@ -309,10 +309,10 @@ function ProjectRow({ project, onRowEnter, onRowLeave }: ProjectRowProps) {
 
         <div className="w-full flex flex-col pt-fluid-2 gap-fluid-3">
           <span className="font-montreal-mono uppercase tracking-[-0.02em] text-fluid-11 text-[#777777]">
-            {project.label}
+            {project.year}, {project.label}
           </span>
           <span className="font-montreal-mono uppercase tracking-[-0.02em] text-fluid-13 sm:text-fluid-14 text-[#555555]">
-            {project.year}, {project.category}
+            {project.category}
           </span>
         </div>
       </a>
@@ -336,13 +336,13 @@ function ProjectRow({ project, onRowEnter, onRowLeave }: ProjectRowProps) {
               ref={labelRef}
               className="font-montreal-mono uppercase tracking-[-0.02em] whitespace-nowrap truncate transition-colors duration-200 text-fluid-11 text-[#777777]"
             >
-              {project.label}
+              {project.year}, {project.label}
             </span>
             <span
               ref={metaRef}
               className="font-montreal-mono uppercase tracking-[-0.02em] whitespace-nowrap truncate transition-colors duration-200 text-fluid-13 text-[#555555]"
             >
-              {project.year}, {project.category}
+              {project.category}
             </span>
           </div>
 
@@ -555,7 +555,7 @@ export function Projects() {
 
           <div className="flex flex-col gap-fluid-10 sm:gap-fluid-12 sm:max-w-fluid-340 sm:pt-fluid-8 sm:text-right">
             <p className="font-montreal leading-[1.35] text-[#555555] text-fluid-13 m-0">
-              Projects delivered during my time at{" "}
+              Client work delivered during my time at{" "}
               <a
                 href="https://juicebox.co.id/"
                 target="_blank"
@@ -564,7 +564,7 @@ export function Projects() {
               >
                 Juicebox Indonesia
               </a>
-              , where I contributed to the development and implementation of websites for the agency’s clients.
+              , alongside personal projects built independently.
             </p>
           </div>
         </div>
