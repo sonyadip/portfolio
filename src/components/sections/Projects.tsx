@@ -555,7 +555,7 @@ export function Projects() {
 
           <div className="flex flex-col gap-fluid-10 sm:gap-fluid-12 sm:max-w-fluid-340 sm:pt-fluid-8 sm:text-right">
             <p className="font-montreal leading-[1.35] text-[#555555] text-fluid-13 m-0">
-              Client work delivered during my time at{" "}
+              Client websites I worked on at{" "}
               <a
                 href="https://juicebox.co.id/"
                 target="_blank"
@@ -564,7 +564,7 @@ export function Projects() {
               >
                 Juicebox Indonesia
               </a>
-              , alongside personal projects built independently.
+              , implementing provided Figma designs into responsive, functional websites ready for launch. Personal projects are built independently from the ground up.
             </p>
           </div>
         </div>
