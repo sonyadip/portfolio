@@ -158,7 +158,7 @@ export function Footer({
     <footer
       id={id}
       ref={sectionRef}
-      className="relative w-full bg-[#ebe8e3] text-[#111111] pt-fluid-110 pb-fluid-32 sm:pt-fluid-140 md:pt-fluid-160 overflow-hidden select-none"
+      className="relative w-full bg-[#ebe8e3] text-[#111111] pt-fluid-80 pb-fluid-32 sm:pt-fluid-80 md:pt-fluid-96 overflow-hidden select-none"
       aria-label="Footer and Contact Section"
     >
       <div className="w-full px-fluid-20 sm:px-fluid-30 lg:px-fluid-32 box-border flex flex-col justify-between">
@@ -180,7 +180,7 @@ export function Footer({
           </span> */}
         </div>
 
-        <div className="contact-headline mb-fluid-64 sm:mb-fluid-96 md:mb-fluid-120">
+        <div className="contact-headline mb-fluid-64 sm:mb-fluid-96 md:mb-fluid-110">
           <div className="overflow-hidden leading-[0.84] block">
             <span
               ref={line1Ref}

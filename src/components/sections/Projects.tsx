@@ -102,26 +102,28 @@ function ProjectRow({ project, onRowEnter, onRowLeave }: ProjectRowProps) {
       return;
     }
 
+    const getFluid = (px: number) =>
+      (px / 1440) * (typeof window !== "undefined" ? window.innerWidth : 1440);
+
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 1024px)", () => {
       gsap.set(link, {
-        height: 100,
-        paddingTop: 24,
-        paddingBottom: 24,
+        height: () => getFluid(100),
+        paddingTop: () => getFluid(24),
+        paddingBottom: () => getFluid(24),
         paddingLeft: 0,
         paddingRight: 0,
       });
       gsap.set(cardBg, { opacity: 0 });
       gsap.set(thumb, {
         width: 0,
-        height: 120,
         opacity: 0,
         scale: 0.2,
-        x: -128,
+        x: () => getFluid(-128),
         marginRight: 0,
       });
-      gsap.set(titleWrap, { paddingLeft: 64 });
+      gsap.set(titleWrap, { paddingLeft: () => getFluid(64) });
 
       const onEnter = () => {
         onRowEnter();
@@ -136,18 +138,18 @@ function ProjectRow({ project, onRowEnter, onRowLeave }: ProjectRowProps) {
         if (line) line.style.opacity = "0";
 
         gsap.to(link, {
-          height: 162,
-          paddingTop: 16,
-          paddingBottom: 16,
-          paddingLeft: 16,
-          paddingRight: 16,
+          height: () => getFluid(162),
+          paddingTop: () => getFluid(16),
+          paddingBottom: () => getFluid(16),
+          paddingLeft: () => getFluid(16),
+          paddingRight: () => getFluid(16),
           duration: 0.38,
           ease: "power3.out",
         });
 
         gsap.to(thumb, {
-          width: 210,
-          marginRight: 32,
+          width: () => getFluid(210),
+          marginRight: () => getFluid(32),
           opacity: 1,
           scale: 1,
           x: 0,
@@ -186,9 +188,9 @@ function ProjectRow({ project, onRowEnter, onRowLeave }: ProjectRowProps) {
         if (line) line.style.opacity = "1";
 
         gsap.to(link, {
-          height: 100,
-          paddingTop: 24,
-          paddingBottom: 24,
+          height: () => getFluid(100),
+          paddingTop: () => getFluid(24),
+          paddingBottom: () => getFluid(24),
           paddingLeft: 0,
           paddingRight: 0,
           duration: 0.32,
@@ -200,13 +202,13 @@ function ProjectRow({ project, onRowEnter, onRowLeave }: ProjectRowProps) {
           marginRight: 0,
           opacity: 0,
           scale: 0.2,
-          x: -128,
+          x: () => getFluid(-128),
           duration: 0.3,
           ease: "power2.inOut",
         });
 
         gsap.to(titleWrap, {
-          paddingLeft: 64,
+          paddingLeft: () => getFluid(64),
           duration: 0.32,
           ease: "power2.inOut",
         });
@@ -358,7 +360,7 @@ function ProjectRow({ project, onRowEnter, onRowLeave }: ProjectRowProps) {
                 alt={project.title}
                 width={210}
                 height={120}
-                className="h-full w-fluid-210 object-cover object-top block select-none scale-[1.08]"
+                className="overflow-hidden rounded-[8px] h-full w-fluid-210 min-w-fluid-210 shrink-0 object-cover object-top block select-none scale-[1.08]"
                 loading="lazy"
                 decoding="async"
               />
@@ -554,7 +556,7 @@ export function Projects() {
           </h2>
 
           <div className="flex flex-col gap-fluid-10 sm:gap-fluid-12 sm:max-w-fluid-340 sm:pt-fluid-8 sm:text-right">
-            <p className="font-montreal leading-[1.35] text-[#555555] text-fluid-13 m-0">
+            <p className="font-montreal leading-[1.5] text-[#555555] text-fluid-14 m-0">
               Client websites I worked on at{" "}
               <a
                 href="https://juicebox.co.id/"
