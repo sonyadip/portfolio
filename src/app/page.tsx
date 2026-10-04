@@ -122,7 +122,10 @@ export default function Home() {
     <div className="bg-[#ebe8e3] text-[#0a0a0a] font-sans antialiased overflow-x-hidden relative selection:bg-black selection:text-white">
       <Navbar />
 
-      <div className="h-screen min-h-screen h-[100svh] min-h-[100svh] flex flex-col justify-end px-fluid-20 sm:px-fluid-30 lg:px-fluid-32 pb-fluid-20 sm:pb-fluid-24 md:pb-fluid-32 box-border relative">
+      <div
+        className="hero-container flex flex-col justify-end px-fluid-20 sm:px-fluid-30 lg:px-fluid-32 pb-fluid-20 sm:pb-fluid-24 md:pb-fluid-32 box-border relative"
+        style={{ paddingBottom: "max(calc(24 / var(--base-size) * var(--base-vw)), env(safe-area-inset-bottom, 20px))" }}
+      >
         <main className="flex-1 flex flex-col justify-end w-full">
           <Banner
             onNameLanded={handleNameLanded}

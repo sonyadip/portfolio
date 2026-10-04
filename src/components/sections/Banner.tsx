@@ -61,6 +61,9 @@ export function Banner({ onNameLanded, onIntroComplete }: BannerProps) {
         gsap.set(bgOverlay, { opacity: 1, display: "block" });
       }
       gsap.set(subtitle, { opacity: 0, y: 12 });
+      if (clipWrapper) {
+        gsap.set(clipWrapper, { opacity: 0 });
+      }
 
       const headers = document.querySelectorAll<HTMLElement>("header");
       if (headers.length > 0) {
@@ -305,13 +308,13 @@ export function Banner({ onNameLanded, onIntroComplete }: BannerProps) {
                 });
               }
 
-              gsap.set(u, { xPercent: 0, yPercent: 0 });
-              gsap.set(c, { xPercent: 0, yPercent: 0 });
-              gsap.set(sonyWord, { clearProps: "transform" });
-              gsap.set(pratamaWord, { clearProps: "opacity" });
-              if (spaceWord) gsap.set(spaceWord, { clearProps: "opacity" });
-              gsap.set(clipWrapper, { clearProps: "transform,willChange" });
-              gsap.set(h1, { clearProps: "transform,willChange" });
+              gsap.set(u, { xPercent: 0, yPercent: 0, clearProps: "transform,willChange" });
+              gsap.set(c, { xPercent: 0, yPercent: 0, clearProps: "transform,willChange" });
+              gsap.set(sonyWord, { clearProps: "transform,willChange" });
+              gsap.set(pratamaWord, { clearProps: "opacity,transform,willChange" });
+              if (spaceWord) gsap.set(spaceWord, { clearProps: "opacity,transform,willChange" });
+              gsap.set(clipWrapper, { clearProps: "all" });
+              gsap.set(h1, { clearProps: "all" });
               if (bgOverlay) {
                 bgOverlay.style.display = "none";
               }
@@ -368,7 +371,7 @@ export function Banner({ onNameLanded, onIntroComplete }: BannerProps) {
           if (!isMounted) return;
           requestAnimationFrame(startIntro);
         });
-        timerId = setTimeout(startIntro, 200);
+        timerId = setTimeout(startIntro, 1000);
       } else {
         startIntro();
       }
@@ -409,11 +412,11 @@ export function Banner({ onNameLanded, onIntroComplete }: BannerProps) {
           >
             <div
               ref={clipWrapperRef}
-              className="hg-1-wrapper w-full flex justify-center items-end opacity-0"
+              className="hg-1-wrapper w-full flex justify-center items-end"
             >
               <h1
                 ref={h1Ref}
-                className="hg-1 text-white w-full"
+                className="hg-1 text-[#0a0a0a] w-full"
                 aria-label="SONY PRATAMA"
               >
                 <span className="inline-block whitespace-nowrap">

@@ -3,7 +3,15 @@
 @font-face {
   font-family: 'Mango Grotesque';
   src: url('/fonts/MangoGrotesque-Black.woff2') format('woff2');
-  font-weight: 800 950;
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mango Grotesque';
+  src: url('/fonts/MangoGrotesque-Black.woff2') format('woff2');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
@@ -11,7 +19,15 @@
 @font-face {
   font-family: 'Mango Grotesque';
   src: url('/fonts/MangoGrotesque-Bold.woff2') format('woff2');
-  font-weight: 600 750;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mango Grotesque';
+  src: url('/fonts/MangoGrotesque-Bold.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -19,7 +35,15 @@
 @font-face {
   font-family: 'mg';
   src: url('/fonts/MangoGrotesque-Black.woff2') format('woff2');
-  font-weight: 800 950;
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'mg';
+  src: url('/fonts/MangoGrotesque-Black.woff2') format('woff2');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
@@ -27,7 +51,15 @@
 @font-face {
   font-family: 'mg';
   src: url('/fonts/MangoGrotesque-Bold.woff2') format('woff2');
-  font-weight: 600 750;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'mg';
+  src: url('/fonts/MangoGrotesque-Bold.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -35,7 +67,15 @@
 @font-face {
   font-family: 'PP Neue Corp Tight';
   src: url('/fonts/PPNeueCorpTight-Ultrabold.woff2') format('woff2');
-  font-weight: 700 900;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Corp Tight';
+  src: url('/fonts/PPNeueCorpTight-Ultrabold.woff2') format('woff2');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
@@ -43,7 +83,23 @@
 @font-face {
   font-family: 'PP Neue Montreal Mono';
   src: url('/fonts/PPNeueMontrealMono-Medium.woff2') format('woff2');
-  font-weight: 400 600;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal Mono';
+  src: url('/fonts/PPNeueMontrealMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal Mono';
+  src: url('/fonts/PPNeueMontrealMono-Medium.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -51,7 +107,23 @@
 @font-face {
   font-family: 'PP Neue Montreal';
   src: url('/fonts/PPNeueMontreal-Medium.woff2') format('woff2');
-  font-weight: 400 600;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Medium.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -213,6 +285,19 @@ html,
 
 .font-montreal {
   font-family: 'PP Neue Montreal', sans-serif;
+}
+
+.hero-container {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+@supports (height: 100svh) {
+  .hero-container {
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
+  }
 }
 
 .hg-1-wrapper {
