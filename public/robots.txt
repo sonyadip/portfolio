@@ -4,5 +4,3 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /404
-
-Sitemap: https://sonypratama.com/sitemap.xml
